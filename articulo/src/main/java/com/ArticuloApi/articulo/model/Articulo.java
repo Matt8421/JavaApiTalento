@@ -1,51 +1,31 @@
-//Paquete que contiene la clase modelo
 package com.ArticuloApi.articulo.model;
 
-//Clase que representa el articulo
+import jakarta.persistence.*;
+
+// Indica que esta clase es una entidad JPA
+@Entity
+@Table(name = "articulo") // Mapea a la tabla "articulo"
 public class Articulo {
 
-    //Atributo que representa el ID unico del articulo
+    @Id // Clave primaria
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // Autoincremental
     private Long id;
 
-    //Atributo que representa el nombre del articulo
     private String nombre;
+    private Double precio;
 
-    //Atributo que representa el precio del articulo    
-    private double precio;
-
-    //Constructor vacio requerido por frameworks como Spring y Jackson
     public Articulo() {}
 
-    //Constructor con parametros para facilitar la creacion de objetos
-    public Articulo(Long id, String nombre, double precio) {
+    public Articulo(Long id, String nombre, Double precio) {
         this.id = id;
         this.nombre = nombre;
         this.precio = precio;
     }
 
-    //Metodos getter y setter para acceder y modificar los atributos
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public double getPrecio() {
-        return precio;
-    }
-
-    public void setPrecio(double precio) {
-        this.precio = precio;
-    }
-    
+    public Long getId() { return id; }
+    public void setId(Long id) { this.id = id; }
+    public String getNombre() { return nombre; }
+    public void setNombre(String nombre) { this.nombre = nombre; }
+    public Double getPrecio() { return precio; }
+    public void setPrecio(Double precio) { this.precio = precio; }
 }
