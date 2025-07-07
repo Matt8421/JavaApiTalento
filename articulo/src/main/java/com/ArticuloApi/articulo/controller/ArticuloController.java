@@ -68,8 +68,8 @@ public class ArticuloController {
 
 
         
-    @GetMapping("/articulos")
-    public String getArticulos() {
+    @GetMapping("/articulo")
+    public String getArticulo() {
         //Aqui podemos retornar una lista de articulos
         //por ahora retonnamos un string para probar que el controlador funciona
 
